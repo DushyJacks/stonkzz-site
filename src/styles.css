@@ -1,0 +1,263 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@theme {
+  /* Colors — Parker palette for Stonkzz */
+  --color-electric-blue: #5196fe;
+  --color-electric-blue-soft: #e8f1ff;
+  --color-ember-orange: #f9754e;
+  --color-ink-black: #1b1d20;
+  --color-midnight: #101828;
+  --color-paper-white: #ffffff;
+  --color-parchment: #f2f1ec;
+  --color-sand: #e1dfd8;
+  --color-graphite: #27272a;
+  --color-steel: #6e6e6e;
+  --color-ash: #797876;
+  --color-fog: #a3a3a3;
+
+  /* Shadcn-compat semantic tokens (mapped to Parker) */
+  --color-background: #ffffff;
+  --color-foreground: #1b1d20;
+  --color-card: #ffffff;
+  --color-card-foreground: #1b1d20;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1b1d20;
+  --color-primary: #5196fe;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #f2f1ec;
+  --color-secondary-foreground: #1b1d20;
+  --color-muted: #f2f1ec;
+  --color-muted-foreground: #6e6e6e;
+  --color-accent: #f9754e;
+  --color-accent-foreground: #ffffff;
+  --color-destructive: #f9754e;
+  --color-destructive-foreground: #ffffff;
+  --color-border: #e1dfd8;
+  --color-input: #a3a3a3;
+  --color-ring: #5196fe;
+
+  /* Fonts */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-gambetta: "Newsreader", "Source Serif 4", Georgia, serif;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 12.8px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-3xl: 32px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-md: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  --shadow-card-lift: 0 8px 30px -8px rgba(27, 29, 32, 0.18);
+  --shadow-blue-glow: 0 30px 80px -20px rgba(81, 150, 254, 0.55);
+
+  /* Animations */
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-marquee: marquee 40s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@layer base {
+  :root {
+    --tracking-display: -0.10em;
+    --tracking-heading: -0.06em;
+    --tracking-heading-sm: -0.03em;
+  }
+
+  * {
+    border-color: var(--color-sand);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-paper-white);
+    color: var(--color-ink-black);
+    font-family: var(--font-inter);
+    font-size: 18px;
+    line-height: 1.43;
+    letter-spacing: -0.36px;
+  }
+
+  ::selection {
+    background-color: var(--color-electric-blue);
+    color: var(--color-paper-white);
+  }
+}
+
+@utility container-page {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+@utility text-display {
+  font-size: clamp(44px, 6.4vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.10em;
+  font-weight: 600;
+}
+
+@utility text-heading {
+  font-size: clamp(34px, 4.6vw, 48px);
+  line-height: 1.13;
+  letter-spacing: -0.06em;
+  font-weight: 600;
+}
+
+@utility text-heading-sm {
+  font-size: clamp(26px, 3vw, 32px);
+  line-height: 1.16;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+@utility text-subheading {
+  font-size: 20px;
+  line-height: 1.42;
+  letter-spacing: -0.023em;
+  font-weight: 500;
+}
+
+@utility text-body-lg {
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: -0.02em;
+}
+
+@utility text-caption {
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+@utility italic-flourish {
+  font-family: var(--font-gambetta);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+@utility btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--color-electric-blue);
+  color: var(--color-paper-white);
+  border-radius: 9999px;
+  padding: 12px 18px;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  transition: transform 0.2s ease-out, filter 0.2s ease-out;
+  white-space: nowrap;
+
+  &:hover {
+    transform: scale(1.03);
+    filter: brightness(1.05);
+  }
+}
+
+@utility btn-ember {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--color-ember-orange);
+  color: var(--color-paper-white);
+  border-radius: 9999px;
+  padding: 16px 24px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: transform 0.2s ease-out, filter 0.2s ease-out;
+  white-space: nowrap;
+  box-shadow: 0 8px 24px -8px rgba(249, 117, 78, 0.55);
+
+  &:hover {
+    transform: scale(1.03);
+    filter: brightness(1.05);
+  }
+}
+
+@utility btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: transparent;
+  color: var(--color-ink-black);
+  border: 1px solid var(--color-ink-black);
+  border-radius: 9999px;
+  padding: 14px 22px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: var(--color-ink-black);
+    color: var(--color-paper-white);
+  }
+}
+
+@utility btn-ghost-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: transparent;
+  color: var(--color-paper-white);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 9999px;
+  padding: 14px 22px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: background-color 0.2s ease-out;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: rgba(255,255,255,0.1);
+  }
+}
+
+@utility card-surface {
+  background-color: var(--color-paper-white);
+  border-radius: 24px;
+  padding: 24px;
+}
+
+@utility tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--color-ink-black);
+  color: var(--color-paper-white);
+  border-radius: 12.8px;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+@utility hairline {
+  border-color: var(--color-sand);
+}
