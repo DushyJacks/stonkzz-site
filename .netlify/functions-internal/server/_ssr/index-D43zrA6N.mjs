@@ -1211,7 +1211,7 @@ const TestimonialsComponent = ({ testimonials }) => {
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4 sm:w-1/2 lg:w-1/3", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-2xl font-semibold sm:text-3xl lg:text-4xl", children: "Customers Feedback" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-muted-foreground text-xl", children: "From career changes to dream jobs, here's how Shadcn Studio helped." }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-muted-foreground text-xl", children: "From career changes to dream jobs, here's how Stonkzz helped." }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               CarouselPrevious,
