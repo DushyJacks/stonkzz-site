@@ -50,7 +50,9 @@ function ReportPage() {
       <section className="bg-paper-white">
         <div className="container-page pb-24 grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5 lg:sticky lg:top-28 self-start">
-            <ReportMockup />
+            <div className="rounded-[48px] overflow-hidden shadow-[0px_4px_24px_rgba(0,0,0,0.06)] border border-[var(--color-sand)]" style={{ background: "var(--color-paper-white)" }}>
+              <img src="/images/Box.jpg" alt="Stonkzz Report Preview" className="w-full h-auto object-cover" />
+            </div>
             <div className="mt-6 flex gap-3">
               <a href={WA_DEFAULT} target="_blank" rel="noopener noreferrer" className="btn-primary w-full">Get full report on WhatsApp</a>
             </div>
